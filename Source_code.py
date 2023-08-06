@@ -11,6 +11,10 @@ _, thresh = cv2.threshold(imgray, 226, 255, cv2.THRESH_BINARY)
 contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
 #print(len(contours))
 
+
+
+
+# for shape edags
 for i in contours:
     a = cv2.approxPolyDP(i, 0.01 * cv2.arcLength(i, True), True)
     cv2.drawContours(img, [a], 0, (0, 255, 0), 2)
